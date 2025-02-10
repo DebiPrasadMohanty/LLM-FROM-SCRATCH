@@ -1016,7 +1016,7 @@ MASTER_CONFIG.update({
 # Train the LLaMA model for the specified number of epochs
 train(llama, optimizer, scheduler=None, config=MASTER_CONFIG)
 ```
-<img src="https://cdn-images-1.medium.com/max/26104/1*qKCUQza7EbFPYIO0IJd6ew.png" alt="" width="50%">
+<img src=""C:\Users\mohan\Downloads\download (3).png"" alt="" width="50%">
 
 
 The loss here is 1.13, we can achieve even more lower loss without encountering significant overfitting. This suggests the model is performing well.
@@ -1035,7 +1035,29 @@ Up until now, we’ve successfully implemented a scaled-down version of the LLaM
     generated_text = generate(llama, MASTER_CONFIG, 500)[0]
     print(generated_text)
 
-<img src="https://cdn-images-1.medium.com/max/31844/1*NRnC0gQnbdCFkYaROiVbtw.png" alt="" width="50%">
+pare and Enggrempern ere thoust havet afb.eth.
+
+AUTOLYCUS:
+ear But herein pant, A motround,
+'Y with one soul them's hormbuty hear reaclionating
+A hoods stir I vis Ist reck.
+
+LORD:
+Will untem de; why jeaunch marry,
+Or pauge;, therein maderous.
+Where king Jaw'det your thou, now,
+Cowill,
+Whicevies and peslling unlives no Race!
+
+PE:
+Than whice's sle deeple sleep's bound:
+: and he propuring with, Harry mell father, lace what,
+Whe prosrossivel comb,
+Do hire heep
+The dies
+BUtnGBUS:
+
+The ein'dt I swo, c
 
 
 Even though some generated words may not be perfect English, our LLM with just 2 million parameters has shown a basic understanding of the English language.
@@ -1051,7 +1073,7 @@ logits, loss = llama(xs, ys)
 # Print the loss on the test set
 print(loss)
 ```
-The computed loss on the test set is approximately 1.236.
+The computed loss on the test set is approximately 1.2965.
 
 A simple way to check for changes in the generated output is to run training for a large number of epochs and observe the results.
 
