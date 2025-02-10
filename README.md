@@ -2,7 +2,6 @@
 # 2.3MParams-LLM-From-Scratch-Python
 ## Table of Contents
 
-- [Prerequisites](#prerequisites)
 - [Understanding the Transformer Architecture of LLaMA](#understanding-the-transformer-architecture-of-llama)
   - [Pre-normalization Using RMSNorm](#pre-normalization-using-rmsnorm)
   - [SwiGLU Activation Function](#swiglu-activation-function)
