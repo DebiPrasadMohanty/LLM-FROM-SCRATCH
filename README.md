@@ -1016,7 +1016,7 @@ MASTER_CONFIG.update({
 # Train the LLaMA model for the specified number of epochs
 train(llama, optimizer, scheduler=None, config=MASTER_CONFIG)
 ```
-<img src=""C:\Users\mohan\Downloads\download (3).png"" alt="" width="50%">
+<img src="C:\Users\mohan\Downloads\download (3).png" alt="" width="50%">
 
 
 The loss here is 1.13, we can achieve even more lower loss without encountering significant overfitting. This suggests the model is performing well.
