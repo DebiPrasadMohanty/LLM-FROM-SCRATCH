@@ -436,7 +436,7 @@ train(model, optimizer)
 <img src="https://cdn-images-1.medium.com/max/17880/1*z1YNDzGegE2sg12SfkIZjw.png" alt="" width="50%">
 
 
-The initial cross-entropy loss before training stands at 4.17, and after 1000 epochs, it reduces to 3.93. In this context, cross-entropy reflects the likelihood of selecting the incorrect word.
+The initial cross-entropy loss before training stands at 4.17, and after 1000 epochs, it reduces to 3.95. In this context, cross-entropy reflects the likelihood of selecting the incorrect word.
 
 Our model incorporates a softmax layer on the logits, which transforms a vector of numbers into a probability distribution. Let’s use the built-in F.cross_entropy function, we need to directly pass in the [unnormalized logits](https://pytorch.org/docs/stable/generated/torch.nn.functional.cross_entropy.html). Consequently, we will modify our model accordingly.
 ```python
@@ -630,7 +630,6 @@ def get_rotary_matrix(context_window, embedding_dim):
 ```
 we generate a rotary matrix based on the specified context window and embedding dimension, following the proposed RoPE implementation.
 
-As you may be familiar with the architecture of transformers, which involves attention heads, we similarly need to create attention heads when replicating LLaMA. To start, let’s first create a single **masked attention head** using the get_rotary_matrix function we previously developed for rotary embeddings. **Additionally, each line is commented for clarity**:
 ```python
 class RoPEAttentionHead(nn.Module):
     def __init__(self, config):
@@ -1024,7 +1023,7 @@ train(llama, optimizer, scheduler=None, config=MASTER_CONFIG)
 <img src="https://cdn-images-1.medium.com/max/26104/1*qKCUQza7EbFPYIO0IJd6ew.png" alt="" width="50%">
 
 
-The loss here is 1.08, we can achieve even more lower loss without encountering significant overfitting. This suggests the model is performing well.
+The loss here is 1.13, we can achieve even more lower loss without encountering significant overfitting. This suggests the model is performing well.
 
 Let’s train the model once more, this time incorporating a scheduler
 ```python
@@ -1062,7 +1061,7 @@ A simple way to check for changes in the generated output is to run training for
 
 ## Experimenting with hyperparameters
 
-Hyperparameter tuning is a crucial step in training neural networks. In the original Llama paper, the authors utilized the Cosine Annealing learning schedule. However, in our experimentation, it didn’t perform well. Here’s an example of experimenting with hyperparameters using a different learning schedule:
+Hyperparameter tuning is a crucial step in training neural networks. In the original Llama paper, the authors utilized the Cosine Annealing learning schedule. However, in our experimentation, it didn’t perform well. Here’s an example of experimenting with Cosine Annealing learning Schedular:
 ```python
 # Update configuration
 MASTER_CONFIG.update({
@@ -1124,10 +1123,3 @@ output_dir = "llama_model_transformers"
 # Load the model and configuration
 llama_transformers = GPT2LMHeadModel.from_pretrained(output_dir)
 ```
-## Conclusion
-
-In this blog, we’ve walked through a step-by-step process on how to implement the LLaMA approach to build your own small Language Model (LLM). As a suggestion, consider expanding your model to around 15 million parameters, as smaller models in the range of 10M to 20M tend to comprehend English better. Once your LLM becomes proficient in language, you can fine-tune it for specific use cases.
-
-I hope this comprehensive blog has provided you with insights on replicating a paper to create your personalized LLM.
-
-Thanks for reading this extensive post!
