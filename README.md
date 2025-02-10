@@ -1,5 +1,4 @@
-# LLM-FROM-SCRATCH
-# 2.3MParams-LLM-From-Scratch-Python
+# LLM-FROM-SCRATCH-Python
 ## Table of Contents
 
 - [Understanding the Transformer Architecture of LLaMA](#understanding-the-transformer-architecture-of-llama)
