@@ -55,8 +55,6 @@ This is achieved by encoding relative positions through multiplication with a ro
 
 In addition to these concepts, the LLaMA paper introduces other significant approaches, including the use of the **AdamW optimizer** with specific parameters, efficient implementations such as the causal [multi-head attention operator](https://facebookresearch.github.io/xformers/components/mha.html) available in the xformers library, and manually implemented backward functions for transformer layers to optimize computation during backward passes.
 
-A special acknowledgment and thanks to [Anush Kumar](https://akgeni.medium.com/) for providing an in-depth explanation of each crucial aspect of LLaMA.
-
 ## Setting the Stage
 
 We’ll be working with a range of Python libraries throughout this project, so let’s import them:
@@ -104,7 +102,7 @@ In the original LLaMA paper, diverse open-source datasets were employed to train
 
 Unfortunately, utilizing extensive datasets may be impractical for smaller projects. Therefore, for our implementation, we’ll take a more modest approach by creating a dramatically scaled-down version of LLaMA.
 
-Given the constraints of not having access to vast amounts of data, we will focus on training a simplified version of LLaMA using the TinyShakespeare dataset. This open source dataset, available [here](https://github.com/karpathy/char-rnn/blob/master/data/tinyshakespeare/input.txt), contains approximately 40,000 lines of text from various Shakespearean works. This choice is influenced by the [Makemore series by Karpathy](https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ), which provides valuable insights into training language models.
+Given the constraints of not having access to vast amounts of data, we will focus on training a simplified version of LLaMA using the TinyShakespeare dataset. This open source dataset, available [here](https://github.com/karpathy/char-rnn/blob/master/data/tinyshakespeare/input.txt), contains approximately 40,000 lines of text from various Shakespearean works.
 
 While LLaMA was trained on an extensive dataset comprising **1.4 trillion** tokens, our dataset, TinyShakespeare, containing around **1 million characters**.
 
